@@ -1,0 +1,71 @@
+.app-bar{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-with-label{
+    background-color :#ffffff ;
+    border-radius : 30px ;
+    min-width: 30% ;
+    height : 30px ;
+    display : flex;
+    align-items :center;
+    margin-left: 30px;
+    justify-content: center;
+}
+
+.grid-display{
+    display : grid;
+    text-align: center;
+}
+
+
+.results-container{
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-div{
+    width: 60%;
+    position: absolute;
+    overflow-y: scroll;
+    right: 44px;
+    height: calc(100vh - 300px);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #888;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #f1f1f1 ;
+  }
+  
+  /* Handle on hover */
+  /* ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  } */
+
+
+  .rbc-calendar{
+    width:100% !important;
+    height:inherit !important
+  }
+
+  .rbc-event{
+    background-color: #8000ff !important;
+  }
+  
+
+
+
+
