@@ -9,7 +9,7 @@ import OkIcon from "../icons/ok"
 import DistanceIcon from "../icons/distance";
 import CircleIcon from "../icons/Circle"
 import Slider from '@material-ui/core/Slider';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import './style.css';
 
@@ -53,10 +53,10 @@ const Register = () => {
             <Grid container className={classes.root} >
                 <div className="app-bar" style={{ display: "flex" }}>
                     {/* <SvgIcon children={<NavigateIcon width="30px" height="30px" />} htmlColor="red"/> */}
-                    <div onClick={() => history.goBack()}> 
+                    <div onClick={() => history.goBack()}>
                         <NavigateIcon width="30px" height="30px" />
-                        </div>
-                   
+                    </div>
+
                     <div style={{
                         border: "solid white", width: "20%", padding: "16px", borderRadius: "30px",
                         textAlign: "center"
@@ -81,23 +81,17 @@ const Register = () => {
                                 }}>
                                     <FormLabel>Configuration des appareils</FormLabel></div>
                             </Link>
-
                         </Grid>
-
                         <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center", paddingTop: "30px" }}>
                             <div style={{ minHeight: "250px" }}>
                                 <RécepteurEmbarquéIcon width="150px" height="150px" />
                             </div>
-
                             <div style={{
                                 border: "solid white", padding: "16px", borderRadius: "30px",
                                 textAlign: "center"
                             }}>
                                 <FormLabel>Iinstallation du recepteur</FormLabel></div>
-                            {/* Change 3 : Add circle icon  */}
-                            <CircleIcon />
                         </Grid>
-
                         <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center" }}>
                             <div style={{ minHeight: "250px" }}>
                                 <div>
@@ -118,40 +112,24 @@ const Register = () => {
                                 border: "solid white", padding: "16px", borderRadius: "30px",
                                 textAlign: "center"
                             }}><FormLabel>Délimitation des parcelles</FormLabel></div>
-                            {/* Change 3 : Add circle icon  */}
-                            <CircleIcon />
-
                         </Grid>
-
                     </Grid>
-                   
                 </Grid>
-                <Grid item xs={12} style={{height:"100px",marginTop:"-50px"}}>
+                <Grid item xs={12} style={{ height: "100px", marginTop: "-50px" }}>
                     <Grid container justify="center" alignItems="center" spacing={10}>
-                       
                         <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center", paddingTop: "0px" }}>
-                      
-                        <div style={{display:"flex", marginLeft:"100px",marginTop:"39px"}}>  
-                        <CircleIcon fill={"white"} style={{fill:"white"}}/> 
-                        <Slider   defaultValue={80} style={{color:"white"}}/>
-                        </div>
-                         
-                        
+                            <div style={{ display: "flex", marginLeft: "100px", marginTop: "39px" }}>
+                                <CircleIcon fill={"white"} style={{ fill: "white" }} />
+                                <Slider defaultValue={80} style={{ color: "white" }} />
+                            </div>
                         </Grid>
-
                         <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center", paddingTop: "30px" }}>
-                        
-                            <CircleIcon /> 
+                            <CircleIcon />
                         </Grid>
-
                         <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center" }}>
-
-                             <CircleIcon /> 
-
-                        </Grid>
-
+                            <CircleIcon />
+                       </Grid>
                     </Grid>
-                   
                 </Grid>
             </Grid>
         </div>
