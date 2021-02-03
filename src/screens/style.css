@@ -24,7 +24,7 @@
 
 .results-container{
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .inner-div{
@@ -63,6 +63,11 @@
 
   .rbc-event{
     background-color: #8000ff !important;
+  }
+
+
+  .rbc-event-allday{
+    background-color: #e1b100 !important;
   }
   
 

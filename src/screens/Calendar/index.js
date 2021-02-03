@@ -146,6 +146,8 @@ class Calendar extends Component {
           </List>
         </Grid>
 
+        {/* Change 4:  Changes for Calendar  */}
+
         <Grid item sm={11} style={{ padding: "0px 8px 8px 0px" }}>
           <div style={{ height: 700 }}>
             {/* <button onClick={() => this.setState({ view: "day" })}>Day</button>

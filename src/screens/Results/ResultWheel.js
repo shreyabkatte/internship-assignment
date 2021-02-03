@@ -37,6 +37,8 @@ const Resultant1 = () => {
 
   const classes = useStyles();
   return (
+
+    // Change 4 :Scroll bar only for inner content
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div >
         <Grid container spacing={10} className={classes.root}>

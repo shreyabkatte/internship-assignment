@@ -8,7 +8,8 @@ import TabList from '@material-ui/lab/TabList';
 import TabPanel from '@material-ui/lab/TabPanel';
 import RefreshIcon from "../icons/Refresh";
 import FormLabel from "@material-ui/core/FormLabel";
-import Calendar from "../screens/Calendar/index"
+import Calendar from "../screens/Calendar/index";
+import MapWrapper from "../components/Maps/LayerExample"
 
 const useStyles = makeStyles({
   root: {
@@ -55,8 +56,10 @@ export default function LabTabs() {
       {/* <TabPanel value="3"><Resultant1 /></TabPanel> */}
 
       <TabPanel value="1"><Calendar /></TabPanel>
-
+      <TabPanel value="2"><MapWrapper /></TabPanel>
       {pathName == "/result-page-wheel" ? <TabPanel value="3"><ResultWheel /></TabPanel> : <TabPanel value="3"><Resultant1 /></TabPanel>}
+
+      {/* <TabPanel value="3"><Resultant1 /></TabPanel> */}
     </TabContext>
   );
 }

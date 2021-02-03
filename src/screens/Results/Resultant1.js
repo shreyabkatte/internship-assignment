@@ -41,6 +41,7 @@ const Resultant1 = () => {
   return (
     <div style={{ display: "flex" }}>
       {/* Navigation items */}
+      {/* Change 3 : On 1st item of list click chnages */}
       <List items={listItems} />
 
       <div className="inner-div" style={{ width: "60%" }}>

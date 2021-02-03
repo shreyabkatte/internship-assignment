@@ -88,7 +88,8 @@ const Register = () => {
                                 textAlign: "center"
                             }}>
                                 <FormLabel>Iinstallation du recepteur</FormLabel></div>
-                            {/* <CircleIcon /> */}
+                            {/* Change 3 : Add circle icon  */}
+                            <CircleIcon />
                         </Grid>
 
                         <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center" }}>
@@ -111,8 +112,8 @@ const Register = () => {
                                 border: "solid white", padding: "16px", borderRadius: "30px",
                                 textAlign: "center"
                             }}><FormLabel>Délimitation des parcelles</FormLabel></div>
-
-                            {/* <CircleIcon /> */}
+                            {/* Change 3 : Add circle icon  */}
+                            <CircleIcon />
 
                         </Grid>
 

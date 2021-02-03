@@ -6,10 +6,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 // import Res
 import ResultComponent from "./screens/Results/index";
-import Calendar from "./screens/Calendar/index"
-
 import LandingPage from "./screens/LandingPage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 import './App.css';
@@ -61,11 +59,9 @@ const App = () => {
           <Route path="/connection" component={Connection} />
           <Route path="/results" component={ResultComponent} />
           <Route path="/result-page-wheel" component={ResultComponent} />
-          {/* <Route path="/calendar" component={Calendar} /> */}
           <LandingPage />
         </Switch>
       </Router>
-      {/* <ResultComponent /> */}
     </MuiThemeProvider>
   );
 }
