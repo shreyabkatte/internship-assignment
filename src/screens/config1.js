@@ -8,7 +8,9 @@ import RécepteurEmbarquéIcon from "../icons/Récepteur-embarqué";
 import OkIcon from "../icons/ok"
 import DistanceIcon from "../icons/distance";
 import CircleIcon from "../icons/Circle"
+import Slider from '@material-ui/core/Slider';
 import {Link} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import './style.css';
 
 
@@ -40,6 +42,7 @@ const style = {
 const Register = () => {
     const [spacing, setSpacing] = React.useState(10);
     const classes = useStyles();
+    const history = useHistory();
 
     const handleChange = (event) => {
         setSpacing(Number(event.target.value));
@@ -50,7 +53,10 @@ const Register = () => {
             <Grid container className={classes.root} >
                 <div className="app-bar" style={{ display: "flex" }}>
                     {/* <SvgIcon children={<NavigateIcon width="30px" height="30px" />} htmlColor="red"/> */}
-                    <NavigateIcon width="30px" height="30px" />
+                    <div onClick={() => history.goBack()}> 
+                        <NavigateIcon width="30px" height="30px" />
+                        </div>
+                   
                     <div style={{
                         border: "solid white", width: "20%", padding: "16px", borderRadius: "30px",
                         textAlign: "center"
@@ -118,6 +124,34 @@ const Register = () => {
                         </Grid>
 
                     </Grid>
+                   
+                </Grid>
+                <Grid item xs={12} style={{height:"100px",marginTop:"-50px"}}>
+                    <Grid container justify="center" alignItems="center" spacing={10}>
+                       
+                        <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center", paddingTop: "0px" }}>
+                      
+                        <div style={{display:"flex", marginLeft:"100px",marginTop:"39px"}}>  
+                        <CircleIcon fill={"white"} style={{fill:"white"}}/> 
+                        <Slider   defaultValue={80} style={{color:"white"}}/>
+                        </div>
+                         
+                        
+                        </Grid>
+
+                        <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center", paddingTop: "30px" }}>
+                        
+                            <CircleIcon /> 
+                        </Grid>
+
+                        <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center" }}>
+
+                             <CircleIcon /> 
+
+                        </Grid>
+
+                    </Grid>
+                   
                 </Grid>
             </Grid>
         </div>
