@@ -1,5 +1,6 @@
 import { FormLabel } from "@material-ui/core";
-import React from "react";
+import React, { Component } from "react";
+import { withStyles } from "@material-ui/core/styles";
 import { makeStyles } from '@material-ui/core/styles';
 import List from "../../components/List";
 import GrapesgrowthIcon from "../../icons/Grapes-growth";
@@ -34,10 +35,14 @@ const listItems = [
   { title: "Suivi des anomalies", icon: <AnomaliesTrackingIcon /> },
   { title: "Historique météo", icon: <SunPictoIcon /> },
   { title: "Activités viticoles", icon: <VineyardActiviesIcon /> }]
-
-const Resultant1 = () => {
-
-  const classes = useStyles();
+  
+class Resultant1 extends Component  {
+  state = {
+   view1:true,
+   view2:true
+  };
+render(){
+  const { classes } = this.props;
   return (
     <div style={{ display: "flex" }}>
       {/* Navigation items */}
@@ -47,12 +52,14 @@ const Resultant1 = () => {
         <div style={{ width: "50%" }}>
           <div style={{ display: "flex", alignItems : "center" ,marginBottom :50}}>
             <IconWithLabel primaryText="Trier" icon={<SortIcon width={25} height={25} />} />
-            <div className = "icon-with-label" >
+            {this.state.view1&&
+            <div className = "icon-with-label"  onClick={() => this.setState({ view1: false })}>
               <IconWithLabel primaryText="Côte Sud" labelColor="#000000" icon={<CloseWindowIcon width={10} height={10} fill={"#000000"} />} position="right" />
-            </div>
-            <div className = "icon-with-label" >
-              <IconWithLabel primaryText="23/08/2020" labelColor="#000000" icon={<CloseWindowIcon width={10} height={10} fill={"#000000"} />} position="right" />
-            </div>
+            </div>}
+            { this.state.view2&&
+            <div className = "icon-with-label"  onClick={() => this.setState({ view2: false })}>
+              <IconWithLabel  primaryText="23/08/2020" labelColor="#000000" icon={<CloseWindowIcon width={10} height={10} fill={"#000000"} />} position="right" />
+            </div>}
           </div>
 
           <FormLabel style={{ fontSize: 16}}>23/08/2020</FormLabel>
@@ -85,5 +92,6 @@ const Resultant1 = () => {
 
   )
 }
+}
 
-export default Resultant1
+export default withStyles(useStyles, { withTheme: true }) (Resultant1)
