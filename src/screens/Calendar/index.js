@@ -60,8 +60,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Grid from "@material-ui/core/Grid";
 import DayPictoIcon from "../../icons/Day-picto";
 import AddactivityIcon from "../../icons/Add-activity";
+import SortIcon from "../../icons/Sort-picto";
 import CalendarSettingsIcon from "../../icons/Calendar-settings";
 import SearchPictoIcon from "../../icons/Search-picto";
+import ArrowDownwardTwoToneIcon from '@material-ui/icons/ArrowDownwardTwoTone';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 moment.locale("fr");
 BigCalendar.momentLocalizer(moment);
@@ -147,6 +150,12 @@ class Calendar extends Component {
         </Grid>
 
         <Grid item sm={11} style={{ padding: "0px 8px 8px 0px" }}>
+          <div style={{display:"flex", marginBottom:"6px"}}> 
+          <ArrowDownwardTwoToneIcon />
+          <ArrowUpwardIcon/>
+          <div style={{ marginRight:"15px",marginLeft:"4px", fontSize:"18px"}}>AOÛT 2020</div>
+          <div style={{ marginTop: "5px" }}><SortIcon height="15px" width="15px"/></div>
+          </div >
           <div style={{ height: 700 }}>
             {/* <button onClick={() => this.setState({ view: "day" })}>Day</button>
             <button onClick={() => this.setState({ view: "month" })}>Month</button> */}
