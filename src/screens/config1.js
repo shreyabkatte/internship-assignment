@@ -72,45 +72,45 @@ const Register = () => {
                     <Grid container justify="center" alignItems="center" spacing={10}>
                         <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center", paddingTop: "0px" }}>
                             <div style={{ minHeight: "250px", marginBottom: "40px" }}>
-                                <RécepteurConnectionWiFiIcon width="200px" height="200px" />
+                                <RécepteurConnectionWiFiIcon width="300px" height="300px" />
                             </div>
                             <Link to="/connection" style={{ textDecoration: 'none' }}>
                                 <div style={{
                                     border: "solid white", padding: "16px", borderRadius: "30px",
-                                    textAlign: "center"
+                                    textAlign: "center",marginTop :100
                                 }}>
                                     <FormLabel>Configuration des appareils</FormLabel></div>
                             </Link>
                         </Grid>
-                        <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center", paddingTop: "30px" }}>
+                        <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center", paddingTop: "50px" }}>
                             <div style={{ minHeight: "250px" }}>
-                                <RécepteurEmbarquéIcon width="150px" height="150px" />
+                                <RécepteurEmbarquéIcon width="230px" height="230px" />
                             </div>
                             <div style={{
                                 border: "solid white", padding: "16px", borderRadius: "30px",
-                                textAlign: "center"
+                                textAlign: "center",marginTop :100
                             }}>
                                 <FormLabel>Iinstallation du recepteur</FormLabel></div>
                         </Grid>
                         <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center" }}>
                             <div style={{ minHeight: "250px" }}>
                                 <div>
-                                    <DistanceIcon width="60px" height="23px" />
-                                    <OkIcon />
+                                    <DistanceIcon width="100px" height="23px" />
+                                    <OkIcon width="60px" height="60px"/>
                                 </div>
                                 <div>
-                                    <DistanceIcon width="60px" height="23px" />
-                                    <OkIcon />
+                                    <DistanceIcon width="100px" height="23px" />
+                                    <OkIcon width="60px" height="60px"/>
                                 </div>
                                 <div>
-                                    <DistanceIcon width="60px" height="23px" />
-                                    <OkIcon />
+                                    <DistanceIcon width="100px" height="23px" />
+                                    <OkIcon width="60px" height="60px"/>
                                 </div>
                             </div>
 
                             <div style={{
                                 border: "solid white", padding: "16px", borderRadius: "30px",
-                                textAlign: "center"
+                                textAlign: "center" ,marginTop :100
                             }}><FormLabel>Délimitation des parcelles</FormLabel></div>
                         </Grid>
                     </Grid>

@@ -25,8 +25,8 @@ const themeDark = createMuiTheme({
     MuiFormLabel: {
       focused: true,
       root: {
-        color: 'white'
-
+        color: 'white',
+        fontSize : 18
       }
     },
     MuiTabs: {

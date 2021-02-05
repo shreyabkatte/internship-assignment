@@ -9,12 +9,12 @@ import TabPanel from '@material-ui/lab/TabPanel';
 import RefreshIcon from "../icons/Refresh";
 import FormLabel from "@material-ui/core/FormLabel";
 import Calendar from "../screens/Calendar/index";
-import MapWrapper from "../components/Maps/LayerExample"
+import MapWrapper from "../screens/Maps/Map"
 
 const useStyles = makeStyles({
   root: {
     // flexGrow: 1,
-    fontSize: "16px",
+    fontSize: "18px",
     textTransform: "none"
   },
   textColorPrimary: {
@@ -46,7 +46,7 @@ export default function LabTabs() {
         </TabList>
       </div>
       <div style={{margin : "50px 30px 30px 30px" ,    width: "28%" ,display :"flex"}}>
-        <FormLabel style={{fontSize : 14}}>Voici un résumé de l’activité en cours dans votre exploitation. Actualisé le 23/08/2020 à 15h00.
+        <FormLabel style={{fontSize : 18}}>Voici un résumé de l’activité en cours dans votre exploitation. Actualisé le 23/08/2020 à 15h00.
                     </FormLabel>
         <RefreshIcon />
       </div>

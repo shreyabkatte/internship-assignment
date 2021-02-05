@@ -10,23 +10,23 @@ const LandingPage = () => {
         <div style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
             <div style={{ display: "grid", width: "20%" }}>
                 <div>
-                    <DevinesIcon width="200px" height="200px" />
+                    <DevinesIcon width="300px" height="300px" />
                 </div>
 
-                <FormLabel style={{ marginBottom: 80 }}>Bienvenue sur DeVines !</FormLabel>
+                <FormLabel style={{ fontSize : 18 , marginBottom: 80 }}>Bienvenue sur DeVines !</FormLabel>
                 <Link to="/configuration" style={{ textDecoration: 'none' }}>
                     <div style={{
-                        border: "solid white", padding: "16px", borderRadius: "30px",
-                        textAlign: "center", marginBottom: 30
+                        border: "solid white", padding: "30px", borderRadius: "60px",
+                        textAlign: "center", marginBottom: 30 , width :"100%"
                     }}>
-                        <FormLabel>S'inscrire</FormLabel></div>
+                        <FormLabel style={{fontSize : 18}}>S'inscrire</FormLabel></div>
                 </Link>
 
                 <div style={{
-                    border: "solid white", padding: "16px", borderRadius: "30px",
-                    textAlign: "center"
+                    border: "solid white", padding: "30px", borderRadius: "60px",
+                    textAlign: "center" ,width :"100%"
                 }}>
-                    <FormLabel>J'ai un compte</FormLabel></div>
+                    <FormLabel style={{fontSize : 18}}>J'ai un compte</FormLabel></div>
             </div>
         </div>
     )

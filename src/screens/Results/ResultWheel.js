@@ -43,23 +43,23 @@ const Resultant1 = () => {
       <div >
         <Grid container spacing={10} className={classes.root}>
           <Grid item className={classes.item} >
-            <IconWithLabel primaryText="Evolution de la baie" icon={<GrapesgrowthIcon width="65px" height="65px" />} verticalAlign={true} />
+            <IconWithLabel primaryText="Evolution de la baie" icon={<GrapesgrowthIcon width="100px" height="100px" />} verticalAlign={true} />
           </Grid>
           <Grid item className={classes.item}>
-            <IconWithLabel primaryText="Densité foliaire" icon={<LeafDensityIcon width="65px" height="65px" />} verticalAlign={true} />
+            <IconWithLabel primaryText="Densité foliaire" icon={<LeafDensityIcon width="100px" height="100px" />} verticalAlign={true} />
           </Grid>
 
         </Grid>
 
         <Grid container spacing={8} className={classes.root}>
           <Grid item >
-            <IconWithLabel primaryText="Activités viticoles" icon={<VineyardActiviesIcon width="65px" height="65px" />} verticalAlign={true} />
+            <IconWithLabel primaryText="Activités viticoles" icon={<VineyardActiviesIcon width="100px" height="100px" />} verticalAlign={true} />
           </Grid>
           <Grid item>
-            <DevinesIcon width="250px" height="250px" />
+            <DevinesIcon width="350px" height="350px" />
           </Grid>
           <Grid item >
-            <IconWithLabel primaryText="Maladies" icon={<DiseasesIcon width="65px" height="65px" />} verticalAlign={true} />
+            <IconWithLabel primaryText="Maladies" icon={<DiseasesIcon width="100px" height="100px" />} verticalAlign={true} />
           </Grid>
 
         </Grid>
@@ -67,10 +67,10 @@ const Resultant1 = () => {
 
         <Grid container spacing={8} className={classes.root}>
           <Grid item className={classes.item}>
-            <IconWithLabel primaryText="Suivi des anomalies" icon={<AnomaliesTrackingIcon width="65px" height="65px" />} verticalAlign={true} />
+            <IconWithLabel primaryText="Suivi des anomalies" icon={<AnomaliesTrackingIcon width="100px" height="100px" />} verticalAlign={true} />
           </Grid>
           <Grid item className={classes.item}>
-            <IconWithLabel primaryText="Historique météo" icon={<SunPictoIcon width="65px" height="65px" />} verticalAlign={true} />
+            <IconWithLabel primaryText="Historique météo" icon={<SunPictoIcon width="100px" height="100px" />} verticalAlign={true} />
           </Grid>
 
         </Grid>

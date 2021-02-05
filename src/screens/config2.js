@@ -31,11 +31,11 @@ const Connection = () => {
 
             <div style={{ display: "flex", justifyContent: 'space-between', padding: "0px 40px" }}>
                 <div style={{ display: "flex", width: "40%" }}>
-                    <BoxWifiIcon width="200px" height="200px" />
+                    <BoxWifiIcon width="350px" height="350px" />
                     <div style={{ display: "flex", alignItems: "center", margin: "0px 40px" }}><PetitLinkIcon /></div>
                     <div style={{ textAlign: "center" }}>
                         <FormLabel style={{ color: "gray", fontWeight: 900 }}>e24**</FormLabel>
-                        <RécepteurEffacéIcon width="200px" height="200px" />
+                        <RécepteurEffacéIcon width="300px" height="300px" />
                     </div>
 
                 </div>
