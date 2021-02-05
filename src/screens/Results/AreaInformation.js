@@ -9,6 +9,10 @@ import GrapesgrowthIcon from "../../icons/Grapes-growth";
 import OverallDiameterIcon from "../../icons/Overall-diameter-picto";
 
 
+/***  Author: Shreya BALACHANDRA ***/
+
+/*** Input components : ApListpBar, IconWithLabel, IconWithLabel, FormLabel, GrapesgrowthIcon, OverallDiameterIcon  ***/
+
 const useStyles = makeStyles((theme) => ({
     root: {
       marginTop: 100
@@ -18,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 
+
+/* The input for AreaInformation component. Dynamic values in the future must be adapted to this format*/
 const information = [
     {
       title: "Parcelle 1",
@@ -83,6 +89,7 @@ const classes = useStyles();
 
     return (
         <List className={classes.root}>
+          {/* Iteration on the information input array and display each attribute from the array */}
           {information.map((item, index) => {
             return (
               <ListItem button className={classes.container}>

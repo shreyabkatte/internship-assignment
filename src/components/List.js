@@ -5,6 +5,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
+/**** Author : Shreya BALACHANDRA ****/
+
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
@@ -22,27 +24,23 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+/***** This component is a constant reusable component to display the List Component. The props are-
+ items : Listitems to be rendered in the format 
+ [
+     title : "",
+     icon : {}
+ ]
+ 
+*****/
 
 const NestedList = ({items}) =>{
     const classes = useStyles();
-    const [open, setOpen] = React.useState(true);
-
-    const handleClick = () => {
-        setOpen(!open);
-    };
 
     return (
         <List
             component="nav"
             aria-labelledby="nested-list-subheader"
-            //     subheader={
-            //         <ListSubheader component="div" id="nested-list-subheader">
-            //             Nested List Items
-            // </ListSubheader>
-            //     }
-            className={classes.root}
-        >
-
+            className={classes.root}>
             {items.map((item, index) => {
                 return (
                     <ListItem button className={classes.container}>

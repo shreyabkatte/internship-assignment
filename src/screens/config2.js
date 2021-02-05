@@ -9,14 +9,22 @@ import DistanceIcon from "../icons/distance"
 import { useHistory } from "react-router-dom";
 import './style.css';
 
+/***  Author: Shreya BALACHANDRA ***/
+/***  Configuration part Screen - Connection ***/
+/***  route : /connection  ***/
+
+
+/*** Input components : FormLabel, NavigateIcon, CroisIcon, BoxWifiIcon, RécepteurEffacéIcon, PetitLinkIcon, DistanceIcon ***/
+/*** Output : Configuration part connection screen ***/
 const Connection = () => {
     const history = useHistory();
     return (
         <div className="app-header">
             <div className="app-bar" style={{ display: "flex" }}>
-            <div onClick={() => history.goBack()}> 
-                        <NavigateIcon width="30px" height="30px" />
-                        </div>
+                {/* Navigation go back icon */}
+                <div style={{cursor : "pointer"}} onClick={() => history.goBack()}>
+                    <NavigateIcon width="30px" height="30px" />
+                </div>
                 <CroisIcon width="25px" height="25px" />
             </div>
             <div style={{ width: "100%", textAlign: "center", margin: "50px 0px 130px 0px" }}><FormLabel style={{ fontSize: "22px" }}>CONFIGURATION</FormLabel>
@@ -27,8 +35,6 @@ const Connection = () => {
                     <DistanceIcon />
                 </div>
             </div>
-
-
             <div style={{ display: "flex", justifyContent: 'space-between', padding: "0px 40px" }}>
                 <div style={{ display: "flex", width: "40%" }}>
                     <BoxWifiIcon width="350px" height="350px" />
@@ -37,10 +43,7 @@ const Connection = () => {
                         <FormLabel style={{ color: "gray", fontWeight: 900 }}>e24**</FormLabel>
                         <RécepteurEffacéIcon width="300px" height="300px" />
                     </div>
-
                 </div>
-
-
                 <FormLabel style={{ display: "flex", alignItems: "center", width: "40%", lineHeight: "inherit", fontSize: "22px" }}>
                     À présent, activez la fonction Bluetooth de votre
                     smartphone et selectionnez le canal de votre
@@ -55,13 +58,8 @@ const Connection = () => {
                 }}>
                     <FormLabel>Suivant</FormLabel>
                 </div>
-
             </div>
-
-
-
         </div>
-
     )
 }
 

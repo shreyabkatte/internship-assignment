@@ -1,3 +1,7 @@
+/**** Author : Shreya BALACHANDRA ****/
+/*****The customized events for calendar. Should be made dynamic in future.
+****/
+
 export default [
     {
       'title': 'Effeuillage',

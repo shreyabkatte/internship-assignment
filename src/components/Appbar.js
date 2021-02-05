@@ -8,46 +8,37 @@ import BluetoothIcon from "../icons/Bluetooth-picto";
 import LocationIcon from "../icons/Location";
 import CalendarIcon from "../icons/Calendar"
 
-const useStyles = makeStyles((theme) => ({
+
+// CSS API : Styles given to this component. 
+
+const useStyles = makeStyles((theme) => ({ 
+  // style of the root element 
   root: {
     boxShadow : "none"
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
+  // primary color of the Appbar . By default it has blue color. Here it is made transperent.
   colorPrimary:{
     backgroundColor: "transparent"
   }
 }));
 
 export default function ButtonAppBar() {
+  // useStyles() is the react hook used to give the classnames to react components.
   const classes = useStyles();
-
+  // The common Appbar components with props and its child components
   return (
     <div >
       <AppBar className={`${classes.colorPrimary} ${classes.root}`} position="static">
         <Toolbar style={{justifyContent : "space-between"}}>
-          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton> */}
           <div style={{width : "6%" ,display : "flex" , justifyContent : "space-between" , alignItems:"center"}}>
             <EmployeeListIcon />
             <CalendarIcon />
           </div>
-
-          {/* <Typography variant="h6" className={classes.title}>
-            News
-          </Typography> */}
-          {/* <Button color="inherit">Login</Button> */}
           <div style={{float : "right" ,width : "10%" ,display : "flex" , justifyContent : "space-between" , alignItems:"center"}}>
             <LocationIcon />
             <BluetoothIcon />
             <MenuIcon />
           </div>
-
         </Toolbar>
       </AppBar>
     </div>

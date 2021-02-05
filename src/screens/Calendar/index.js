@@ -1,50 +1,3 @@
-// import React from "react"
-
-
-// const Calendar = () =>{
-//     return (
-//         <div>Hello</div>
-//     )
-// }
-
-// export default Calendar;
-
-// import React from "react"
-
-
-
-// import Calendar from 'react_google_calendar'
-
-// const calendar_configuration = {
-//     api_key: 'AIzaSyDz9Ipnj_f9XNRXHsgEnJiGzAgyyLTCoW4',
-//     calendars: [
-//       {
-//         name: 'demo',
-//         url: 'https://calendar.google.com/calendar/u/0?cid=c2hyZXlhLmIua2F0dGVAZ21haWwuY29t'
-//       }
-//     ],
-//     dailyRecurrence: 700,
-//     weeklyRecurrence: 500,
-//     monthlyRecurrence: 20
-// }
-
-// export default class MyApp extends React.Component {
-//     constructor(props) {
-//       super(props)
-//         this.state = {
-//           events: []
-//         }
-//     }
-
-//     render = () =>
-//       <div>
-//         <Calendar
-//           events={this.state.events}
-//           config={calendar_configuration} />
-//       </div>
-// }
-
-
 import React, { Component } from "react";
 import events from "./events";
 import BigCalendar from "react-big-calendar";
@@ -66,11 +19,19 @@ import SearchPictoIcon from "../../icons/Search-picto";
 import ArrowDownwardTwoToneIcon from '@material-ui/icons/ArrowDownwardTwoTone';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
+
+/***  Author: Shreya BALACHANDRA ***/
+/***  Calendar part ***/
+/***  route : /results  ***/
+
+/* French calendar */
 moment.locale("fr");
 BigCalendar.momentLocalizer(moment);
 
 const allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);
 
+
+/* Array of icon item on the left panel are the input to the List component */
 const items = [
   {
     icon : <AddactivityIcon />
@@ -101,8 +62,13 @@ const items = [
   }  
 ]
 
-class Calendar extends Component {
 
+class Calendar extends Component {
+/* local state of the calendar. 
+view : The variable to store 'display type' field
+date : Iniatial date set in calendar
+width : customized width of the calendar
+ */
   state = {
     view: "day",
     date: new Date(2015, 3, 12),
@@ -119,11 +85,11 @@ class Calendar extends Component {
   }
 
   render() {
-    // const classes = useStyles();
-
-
-
     return (
+      /* Left Navigation Panel for Calendar*/
+
+      /*Grid component is used to display the contents in grif form. 
+      The parent component takes the value 'container' and child Grid's take 'item ' as value  */
       <Grid container spacing={8}  >
         <Grid item sm={1} style={{ padding: "8px", backgroundColor: "#8000ff" }}>
           <List >
@@ -131,12 +97,14 @@ class Calendar extends Component {
               return (
                 <ListItem style={{ padding: "8px 0px" }} button >
                   <ListItemIcon style={{ display: "flex", justifyContent: "center", width: "100%" }} 
+                  // onClick of the icons, the state variable is set using setState. This re-renders entire component 
                   onClick={item.view ? () => {
                     this.setState({ view: item.view })
                   } : () => {
                     this.setState({ view: "month" })
                   }}>
                     {index == items.length -1 ? (
+                    /* Icons are displayed using input array */
                     <div style={{height : "400px" ,  paddingTop: "380px"}}>
                       
                       {item.icon}
@@ -149,18 +117,24 @@ class Calendar extends Component {
           </List>
         </Grid>
 
-        {/* Change 4:  Changes for Calendar  */}
-
+        {/* Sort and Filter section */}
         <Grid item sm={11} style={{ padding: "0px 8px 8px 0px" }}>
           <div style={{display:"flex", marginBottom:"6px"}}> 
-          <ArrowDownwardTwoToneIcon />
-          <ArrowUpwardIcon/>
-          <div style={{ marginRight:"15px",marginLeft:"4px", fontSize:"18px"}}>AOÛT 2020</div>
-          <div style={{ marginTop: "5px" }}><SortIcon height="15px" width="15px"/></div>
+            <ArrowDownwardTwoToneIcon />
+            <ArrowUpwardIcon/>
+            <div style={{ marginRight:"15px",marginLeft:"4px", fontSize:"18px"}}>AOÛT 2020</div>
+            <div style={{ marginTop: "5px" }}><SortIcon height="15px" width="15px"/></div>
           </div >
+
+          {/* Calender Container
+          style: style props of BigCalendar component
+          events: The customized events displayed in calendar
+          view: Selected view
+          date: Current date
+          onNavigate: Updates the calendar as per the current date.
+
+           */}
           <div style={{ height: 700 }}>
-            {/* <button onClick={() => this.setState({ view: "day" })}>Day</button>
-            <button onClick={() => this.setState({ view: "month" })}>Month</button> */}
             <BigCalendar
               style={{ height: 500, width: this.state.width }}
               toolbar={false}
@@ -174,11 +148,7 @@ class Calendar extends Component {
             />
           </div>
         </Grid>
-
-
       </Grid>
-
-
     );
   }
 }

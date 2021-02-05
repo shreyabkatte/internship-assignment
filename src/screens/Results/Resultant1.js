@@ -18,6 +18,15 @@ import CloseWindowIcon from "../../icons/close-window";
 import "../style.css"
 
 
+/***  Author: Shreya BALACHANDRA ***/
+/***  Resultant Screen ***/
+/***  route : /results  ***/
+
+
+/*** Input components : GrapesgrowthIcon, IconWithLabel, LeafDensityIcon, DiseasesIcon
+                        AnomaliesTrackingIcon, SunPictoIcon, VineyardActiviesIcon, DevinesIcon, Grid, SortIcon, CloseWindowIcon ***/
+/*** Output : Resultant Screen ***/
+
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: -10
@@ -27,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-// Navigation items 
+// Navigation items passed to the list component
 const listItems = [
   { title: "Evolution de la baie", icon: <GrapesgrowthIcon /> },
   { title: "Densité foliaire", icon: <LeafDensityIcon /> },
@@ -45,8 +54,8 @@ render(){
   const { classes } = this.props;
   return (
     <div style={{ display: "flex" }}>
-      {/* Navigation items */}
-      {/* Change 3 : On 1st item of list click chnages */}
+
+      {/* List displayed on the left section of the screen. List component take the array of items to be displayed in 'items' props   */}
       <List items={listItems} />
 
       <div className="inner-div" style={{ width: "60%" }}>
@@ -82,7 +91,7 @@ render(){
           </Grid>
         </div>
 
-        {/* Information of different areas */}
+        {/* A constant component for displaying all the informationsabout a particular region */}
         <AreaInformation />
       </div>
     </div>

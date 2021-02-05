@@ -7,6 +7,18 @@ import "leaflet-geosearch/dist/geosearch.css";
 import "./index.css";
 
 
+/***  Author: Shreya BALACHANDRA ***/
+/***  Map Container ***/
+/***  route : /results  ***/
+
+/*** Input components :  MapContainer, TileLayer, Polygon, Marker, Popup , useMap from 'react-leaflet' package
+ *                       GeoSearchControl, OpenStreetMapProvider from leaflet-geosearch package ***/
+/*** Output : Map section of results page ***/
+
+
+
+
+// Coordinates to the poligon tile of Marcillac
 const multiPolygon = [
     [[45.293062, -0.548343],
     [45.254466, -0.551089],
@@ -19,9 +31,16 @@ const multiPolygon = [
 ]
 // Cordinates of Marcillac
 const center = [45.269169177925754, -0.5231516014256281]
-const purpleOptions = { color: 'white' }
 
-function LeafletgeoSearch() {
+// Color given to the tile
+const tileColor = { color: 'white' }
+
+/***  Search feature on the map 
+      - Create a GeoSearchControl object from leaflet-geosearch with provider object as OpenStreetMapProvider
+      - map is imported from useMap() hook of react-leaflet
+      - addControl function embeds the searchControl object created above which is used to display the result for searched city
+      - style - style of search bar ***/
+      function LeafletgeoSearch() {
     const map = useMap();
     useEffect(() => {
       const provider = new OpenStreetMapProvider();
@@ -30,7 +49,6 @@ function LeafletgeoSearch() {
         provider,
         style: 'bar',
         autoComplete: true,
-        position: "topleft",
         marker: {
           icon
         }
@@ -44,17 +62,28 @@ function LeafletgeoSearch() {
     return null;
   }
 
+
+
 class MapWrapper extends React.Component {
     render() {
         return (
             <div id="mapid">
+                {/* Parent map container with following props: 
+                    - center - coordinates to the city to be displayed
+                    - zoom - zoom level
+                    - scrollWheelZoom - boolean (true if scrollzoom feature is required) 
+                */}
                 <MapContainer center={center} zoom={13} scrollWheelZoom={true}>
+                    {/* TileLayer component - Imports OpenStreetMap API and the 'url' props imports the DarkMatter utility.*/}
                     <TileLayer
                         attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
                         url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
                     />
                     <LeafletgeoSearch />
-                    <Polygon pathOptions={purpleOptions} positions={multiPolygon} />
+                    {/* Draw polygon with the given city coordinates . pathOptions takes the color value and 
+                    positions takes the array of coordinates for the polygon*/}
+                    <Polygon pathOptions={tileColor} positions={multiPolygon} />
+                    {/* Marker Component - Pins the location of specified coordinates */}
                     <Marker position={[45.269169177925754, -0.5231516014256281]}>
                         <Popup>
                             <div>

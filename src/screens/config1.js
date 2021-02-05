@@ -14,6 +14,15 @@ import { useHistory } from "react-router-dom";
 import './style.css';
 
 
+/***  Author: Shreya BALACHANDRA ***/
+/***  Configuration part 1 Screen ***/
+/***  route : /configuration  ***/
+
+
+/*** Input components : FormLabel, NavigateIcon, RécepteurConnectionWiFiIcon, 
+                        RécepteurEmbarquéIcon, OkIcon, CircleIcon, DistanceIcon, Slider, Link ***/
+/*** Output : Configuration part 1 screen ***/
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -34,16 +43,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const style = {
-    width: "30px",
-    height: "30px"
-}
-
 const Register = () => {
     const [spacing, setSpacing] = React.useState(10);
     const classes = useStyles();
     const history = useHistory();
 
+    /* Handle change event for foclick of the different container sections*/
     const handleChange = (event) => {
         setSpacing(Number(event.target.value));
     };
@@ -51,6 +56,7 @@ const Register = () => {
     return (
         <div className="app-header">
             <Grid container className={classes.root} >
+                {/* Header Sectionv - Consists of Header icons (Hanmburger, Account, Map, Bluetooth) */}
                 <div className="app-bar" style={{ display: "flex" }}>
                     {/* <SvgIcon children={<NavigateIcon width="30px" height="30px" />} htmlColor="red"/> */}
                     <div onClick={() => history.goBack()}>
@@ -64,12 +70,15 @@ const Register = () => {
                         <FormLabel>Passer l’installation</FormLabel></div>
                 </div>
 
-
+                {/* Header Label - PAS À PAS */}
                 <div style={{ width: "100%", textAlign: "center", margin: "30px 0px 60px 0px" }}><FormLabel>PAS À PAS</FormLabel>
                 </div>
 
+                
                 <Grid item xs={12} >
                     <Grid container justify="center" alignItems="center" spacing={10}>
+                        
+                        {/*  Section : Configuration des appareils */}
                         <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center", paddingTop: "0px" }}>
                             <div style={{ minHeight: "250px", marginBottom: "40px" }}>
                                 <RécepteurConnectionWiFiIcon width="300px" height="300px" />
@@ -82,6 +91,8 @@ const Register = () => {
                                     <FormLabel>Configuration des appareils</FormLabel></div>
                             </Link>
                         </Grid>
+                        
+                        {/*  Section : Iinstallation du recepteur */}
                         <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center", paddingTop: "50px" }}>
                             <div style={{ minHeight: "250px" }}>
                                 <RécepteurEmbarquéIcon width="230px" height="230px" />
@@ -92,6 +103,8 @@ const Register = () => {
                             }}>
                                 <FormLabel>Iinstallation du recepteur</FormLabel></div>
                         </Grid>
+                        
+                        {/*  Section : Délimitation des parcelles */}
                         <Grid item style={{ margin: "60px", minWidth: "340px", textAlign: "center" }}>
                             <div style={{ minHeight: "250px" }}>
                                 <div>

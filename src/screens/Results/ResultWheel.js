@@ -11,6 +11,14 @@ import DevinesIcon from "../../icons/Logo-devines";
 import Grid from "@material-ui/core/Grid";
 import "../style.css"
 
+/***  Author: Shreya BALACHANDRA ***/
+/***  Resultant wheel Screen ***/
+/***  route : /result-page-wheel  ***/
+
+
+/*** Input components : GrapesgrowthIcon, IconWithLabel, LeafDensityIcon, DiseasesIcon
+                        AnomaliesTrackingIcon, SunPictoIcon, VineyardActiviesIcon, DevinesIcon, Grid ***/
+/*** Output : Resultant wheel Screen ***/
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,23 +32,19 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-// Navigation items 
-const listItems = [
-  { title: "Evolution de la baie", icon: <GrapesgrowthIcon /> },
-  { title: "Densité foliaire", icon: <LeafDensityIcon /> },
-  { title: "Maladies", icon: <DiseasesIcon /> },
-  { title: "Suivi des anomalies", icon: <AnomaliesTrackingIcon /> },
-  { title: "Historique météo", icon: <SunPictoIcon /> },
-  { title: "Activités viticoles", icon: <VineyardActiviesIcon /> }]
-
 const Resultant1 = () => {
-
   const classes = useStyles();
-  return (
-
-    // Change 4 :Scroll bar only for inner content
+  return (   
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div >
+        {/* First row icons : GrapesgrowthIcon and LeafDensityIcon display. Use IconwithLabel component to display the icons
+        
+        Props for IconWithLabel component are - 
+        primaryText: Primary/Main text to display
+        icon: icon to be displayed
+        width and height for the icon
+        verticalAlignment: Boolean (true if vertically alligned)
+         */}
         <Grid container spacing={10} className={classes.root}>
           <Grid item className={classes.item} >
             <IconWithLabel primaryText="Evolution de la baie" icon={<GrapesgrowthIcon width="100px" height="100px" />} verticalAlign={true} />
@@ -48,9 +52,9 @@ const Resultant1 = () => {
           <Grid item className={classes.item}>
             <IconWithLabel primaryText="Densité foliaire" icon={<LeafDensityIcon width="100px" height="100px" />} verticalAlign={true} />
           </Grid>
-
         </Grid>
 
+        {/* Second row icons : VineyardActiviesIcon, DevinesIcon  and DiseasesIcon display. */}
         <Grid container spacing={8} className={classes.root}>
           <Grid item >
             <IconWithLabel primaryText="Activités viticoles" icon={<VineyardActiviesIcon width="100px" height="100px" />} verticalAlign={true} />
@@ -61,10 +65,9 @@ const Resultant1 = () => {
           <Grid item >
             <IconWithLabel primaryText="Maladies" icon={<DiseasesIcon width="100px" height="100px" />} verticalAlign={true} />
           </Grid>
-
         </Grid>
 
-
+        {/* Third row icons : AnomaliesTrackingIcon and SunPictoIcon  */}
         <Grid container spacing={8} className={classes.root}>
           <Grid item className={classes.item}>
             <IconWithLabel primaryText="Suivi des anomalies" icon={<AnomaliesTrackingIcon width="100px" height="100px" />} verticalAlign={true} />

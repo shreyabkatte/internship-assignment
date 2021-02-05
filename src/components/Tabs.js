@@ -11,6 +11,11 @@ import FormLabel from "@material-ui/core/FormLabel";
 import Calendar from "../screens/Calendar/index";
 import MapWrapper from "../screens/Maps/Map"
 
+/*** Author : Shreya BALACHANDRA ***/
+/*** This component is a constant reusable component to display Tabs component. The props are-
+Pending for customizing. Props shpuld be sent from Parent element ***/
+
+
 const useStyles = makeStyles({
   root: {
     // flexGrow: 1,
@@ -27,8 +32,11 @@ const useStyles = makeStyles({
 
 export default function LabTabs() {
   const classes = useStyles();
+
+  // react hook for stateChange. HandleChange event is used to update the state.
   const [value, setValue] = React.useState('1');
 
+  // onClick event of the tab
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -39,6 +47,7 @@ export default function LabTabs() {
     <TabContext value={value} >
       {/* <AppBar position="static"> */}
       <div style={{ display: "flex", justifyContent: "center" }}>
+        {/* List of tabs to be displayed */}
         <TabList onChange={handleChange} aria-label="simple tabs example">
           <Tab className={classes.root} label="Répartition des tâches" value="1" />
           <Tab className={classes.root} label="Suivre l’activité" value="2" />
@@ -50,16 +59,13 @@ export default function LabTabs() {
                     </FormLabel>
         <RefreshIcon />
       </div>
-
-      {/* <TabPanel value="1">Item One</TabPanel>
-      <TabPanel value="2">Item Two</TabPanel> */}
-      {/* <TabPanel value="3"><Resultant1 /></TabPanel> */}
-
+      {/* <Tabpanel is displayed on each tab. Value is used to map from <Tab /> to <TabPanel />*/}
+      {/* Calendar content */}
       <TabPanel value="1"><Calendar /></TabPanel>
+      {/* Map Content */}
       <TabPanel value="2"><MapWrapper /></TabPanel>
+      {/* Results content */}
       {pathName == "/result-page-wheel" ? <TabPanel value="3"><ResultWheel /></TabPanel> : <TabPanel value="3"><Resultant1 /></TabPanel>}
-
-      {/* <TabPanel value="3"><Resultant1 /></TabPanel> */}
     </TabContext>
   );
 }

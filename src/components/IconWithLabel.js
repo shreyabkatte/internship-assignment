@@ -1,6 +1,16 @@
 import React from "react";
 import FormLabel from "@material-ui/core/FormLabel";
 
+/**** Author : Shreya BALACHANDRA ****/
+/***** This component is a constant reusable component to display icon with label. The props are-
+ primaryText : The main text to be displayed
+ secondaryText : The secondary text if any else null
+ labelColor : Customized color if any
+ icon : icon to be displayed
+ position : position of the icon
+ verticalAlign  : The allignment of icon and label. If vertical send verticalAllignment={true} : flag for allignment
+ 
+****/
 
 const IconWithLabel = ({ primaryText, labelColor, secondaryText, icon, position = "left", verticalAlign = false }) => {
     return (verticalAlign ?
